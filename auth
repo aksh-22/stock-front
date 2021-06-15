@@ -1,0 +1,10 @@
+https://rest.coinapi.io/v1/exchangerate/BTC?apikey=83956DB0-D93E-404C-9CFA-0C11ABF48BA8
+
+https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=67be5d9ea4c2f150eb7f710f105847b0
+5c7da82bd976a57b518b307b282a10d6
+
+https://api.nomics.com/v1/markets?key=71d5adde23d471e42f110ec25e0b12c39f3710e8
+
+https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false
+
+https://api.coingecko.com/api/v3/coins/${input}

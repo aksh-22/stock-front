@@ -1,0 +1,70 @@
+.table_bottom_element {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	list-style-type: none;
+	text-align: center;
+	padding: 1em;
+	color: #706a94;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.9em;
+	padding: 1.5em 0;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-bottom: 1px solid #d9d5ec;
+}
+
+.table_bottom_element .tag {
+	display: block;
+}
+
+.table_bottom_element .tag p {
+	display: inline-block;
+	background: #e6e6f2;
+	padding: 0.5em;
+	padding-left: 1.5em;
+	border-radius: 30px;
+	position: relative;
+}
+
+.table_bottom_element .tag p::before {
+	content: '';
+	width: 6px;
+	height: 6px;
+	top: 50%;
+	right: 70%;
+	transform: translate(-70%, -50%);
+	position: absolute;
+	border-radius: 50%;
+	background: #4a4aff;
+}
+
+.table_bottom_element .btn {
+	display: block;
+	cursor: pointer;
+}
+
+.table_bottom_element .view p {
+	padding: 1em 2em;
+	display: inline-block;
+	background: #6d5bd0;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.table_bottom_element .save p {
+	padding: 1em 2em;
+	display: inline-block;
+	background: #18a0fb;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.table_bottom_element .delete p {
+	padding: 1em 2em;
+	display: inline-block;
+	background: #6d5bd0;
+	color: #fff;
+	border-radius: 10px;
+}
