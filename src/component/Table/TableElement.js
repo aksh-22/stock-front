@@ -2,23 +2,24 @@ import React, { useState, useEffect } from 'react'
 import classes from './TableElement.module.css'
 import { Link } from 'react-router-dom';
 import useExpressFetch from '../../hooks/useExpressFetch';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { dataActions } from '../../store/index';
 
 const TableElement = (props) => {
   const dataState = useSelector((state) => state.apiData);
   const nodedataState = useSelector((state) => state.nodeData);
   const [saved, setSaved] = useState(false)
-  console.log('TableElement')
+  const dispath = useDispatch();
 
   useEffect(() => {
-    let a;
-    for (const key in nodedataState) {
-      a = nodedataState[key].companyName === props.companyName
-    }
-    if (a) {
+    const newArr = nodedataState.map(el => el.companyName)
+    if (newArr.includes(props.companyName)) {
       setSaved(true)
     }
-  }, [nodedataState, props.companyName])
+    else {
+      setSaved(false)
+    }
+  }, [nodedataState, props])
 
   const button = () => {
     if (props.btn === 'save') {
@@ -29,7 +30,7 @@ const TableElement = (props) => {
       return (<li className={`${classes.delete} ${classes.btn}`} onClick={() => { deleteDataHandler(props.id) }}> <p>DELETE</p> </li>)
     }
   }
-  const { getExpressDdata } = useExpressFetch()
+  const { getExpressDdata, fetchData } = useExpressFetch()
 
   const saveDataHandler = (id) => {
     const index = dataState.findIndex(el => el.id === id);
@@ -49,6 +50,7 @@ const TableElement = (props) => {
     getExpressDdata({
       url: `http://127.0.0.1:3000/api/v1/stocks/deletestocks/${id}`, btntype: 'delete', fetchType: 'node', method: 'DELETE', id: id
     })
+    dispath(dataActions.setNodeData(fetchData));
   }
 
   return (

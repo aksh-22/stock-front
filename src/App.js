@@ -11,13 +11,13 @@ import { dataActions } from './store/index';
 
 function App() {
 	const { getExpressDdata, fetchData } = useExpressFetch()
-	const dispath = useDispatch();
-	dispath(dataActions.setNodeData(fetchData));
 
+	const dispath = useDispatch();
 	useEffect(() => {
 		getExpressDdata({ url: 'http://127.0.0.1:3000/api/v1/stocks/getstocks', btntype: 'delete', fetchType: 'node' })
 	}, [getExpressDdata])
 
+	dispath(dataActions.setNodeData(fetchData));
 	return (
 		<div className='App'>
 			<Header />

@@ -7,16 +7,14 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import useApiFetch from '../../hooks/useApiFetch';
 import { dataActions } from '../../store/index';
-// import useApiSearch from '../../hooks/useApiSearch';
 
 const Table = () => {
-	console.log('Table')
-
 	const [pageNo, setPageNo] = useState(1)
 	const [pagination, setPagination] = useState(true)
 	// const dataState = useSelector((state) => state.apiData);
 	const dispath = useDispatch();
 	const inputRef = useRef()
+
 
 
 

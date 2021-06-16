@@ -1,10 +1,12 @@
 .header {
-	display: block;
+	display: flex;
 	background: #35496b;
 	color: #00aeef;
 	width: 100%;
 	padding: 1.5em;
 	padding-top: 0.8em;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .header p {
@@ -20,4 +22,20 @@
 	color: black;
 	color: #fff;
 	font-size: 0.4em;
+}
+
+.header .nav a {
+	color: red;
+}
+
+.header .nav a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3em;
+	margin: 0 1em;
+	padding-bottom: 0.1em;
+}
+
+.header .nav a.active {
+	border-bottom: 1px solid #fff;
 }

@@ -3,17 +3,18 @@ import TableElement from './TableElement';
 import classes from './TableView.module.css';
 import { Link } from 'react-router-dom';
 import useExpressFetch from '../../hooks/useExpressFetch';
+import { useSelector } from 'react-redux';
 
 
 const TableView = () => {
-  console.log('TableView')
+  const nodedataState = useSelector((state) => state.nodeData);
 
   const { getExpressDdata, fetchData } = useExpressFetch()
   // const dataState = useSelector((state) => state.nodeData);
 
   useEffect(() => {
     getExpressDdata({ url: 'http://127.0.0.1:3000/api/v1/stocks/getstocks', btntype: 'delete', fetchType: 'node' })
-  }, [getExpressDdata, fetchData])
+  }, [getExpressDdata, nodedataState])
 
   const showData = () => {
     return fetchData.map(ul => {
